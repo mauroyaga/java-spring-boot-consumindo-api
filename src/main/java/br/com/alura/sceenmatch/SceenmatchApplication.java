@@ -30,7 +30,15 @@ public class SceenmatchApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         var consumindoAPI = new ConsumindoAPI();
 
-        var json = consumindoAPI.obterDados(  "https://omdbapi.com/?t=gilmore+girls&apikey=848b347e");
+        /*
+        * Para consumir a API do OMDB é necessário uma chave de API
+        * Você pode obter uma chave de API em: http://www.omdbapi.com/apikey.aspx
+        * Também pode ver a documentação da API em: http://www.omdbapi.com/
+        * para obter os dados de uma série específica, basta passar o nome da série como parâmetro
+        * Exemplo: http://www.omdbapi.com/?t=Friends&apikey=SUA_CHAVE_DE_API_AQUI
+        *
+        * */
+        var json = consumindoAPI.obterDados(  "SUA CHAVE DE API AQUI");
 		System.out.println(json);
 
         ConverteDados conversor = new ConverteDados();
